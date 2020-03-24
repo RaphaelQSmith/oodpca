@@ -11,7 +11,7 @@ public class DbConnect {
 	}
 
 	@SuppressWarnings("deprecation")
-	public void connectDB() {
+	public void connectDB(String query) {
 		
 		try{
 			// Load the database driver
@@ -20,7 +20,6 @@ public class DbConnect {
 			String dbServer = "jdbc:mysql://52.50.23.197:3306/world";
 			String user = "cctstudent";
 			String password = "Pass1234!";
-			String query = "SELECT * FROM country";
 		
 			// Get a connection to the database
 			Connection conn = DriverManager.getConnection(dbServer, user, password);
@@ -29,7 +28,7 @@ public class DbConnect {
 			ResultSet rs=stmt.executeQuery(query);  
 		
 			while(rs.next())  
-				System.out.println(rs.getObject(1)+"  "+rs.getString(2)+"  "+rs.getString(3)+"  "+rs.getString(4)+"  "+rs.getString(5));  
+				System.out.println(rs.getObject(1)+"  "+rs.getString(2)+"  "+rs.getString(3));  
 				conn.close();  
 				}catch(Exception e){ System.out.println(e);}  
 				}  
