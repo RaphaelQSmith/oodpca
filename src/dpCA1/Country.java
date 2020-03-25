@@ -1,58 +1,59 @@
 package dpCA1;
 
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
-
 public class Country {
-	public Country() {
-		
-	}
 	
-	InputStreamReader in = new InputStreamReader(System.in);
-	BufferedReader br = new BufferedReader(in);
-	String input;
+	private Object code;
+	private String name;
+	private String continent;
+	private float area;
+	private String headOfState;
+
+	public Country(Object code, String name, String continent, float area, String headOfState) {
+		this.code = code;
+		this.name = name;
+		this.continent = continent;
+		this.area = area;
+		this.headOfState = headOfState;
+	}
+
 	
-//	enum continent{
-//		Europe,
-//		Asia,
-//		Africa,
-//		South America,
-//		Antarctica,
-//		North America,
-//		Oceania
-//	}
-	
-	public String getByName() {
-		System.out.println("Please enter the name of the Country: ");
-		try {
-			input = br.readLine();
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		return "SELECT Code, Name, Continent FROM country WHERE Name=" +"'" + input + "'";
+	public Object getCode() {
+		return code;
 	}
-	public String getByCode() {
-		System.out.println("Please enter the Code of the Country: ");
-		try {
-			input = br.readLine();
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		return "SELECT Code, Name, Continent FROM country WHERE Code=" +"'" + input +"'";
+
+	public void setCode(Object code) {
+		this.code = code;
 	}
-	public String getAll() {
-		return "SELECT * FROM country";
+
+	public String getName() {
+		return name;
 	}
-	public void addCountry() {
-		String code, name, continent, area, head;
-		do {
-			System.out.println("Please enter the Code: ");
-			input = br.readLine();
-			
-			
-		return "INSERT INTO country(Code, Name, Continent, SurfaceArea, HeadOfState) VALUES();		
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public String getContinent() {
+		return continent;
+	}
+
+	public void setContinent(String continent) {
+		this.continent = continent;
+	}
+
+	public float getArea() {
+		return area;
+	}
+
+	public void setArea(float area) {
+		this.area = area;
+	}
+
+	public String getHeadOfState() {
+		return headOfState;
+	}
+
+	public void setHeadOfState(String headOfState) {
+		this.headOfState = headOfState;
 	}
 }
