@@ -47,6 +47,12 @@ public class Country {
 		return "SELECT * FROM country";
 	}
 	public void addCountry() {
-		
+		String code, name, continent, area, head;
+		do {
+			System.out.println("Please enter the Code: ");
+			input = br.readLine();
+			
+			
+		return "INSERT INTO country(Code, Name, Continent, SurfaceArea, HeadOfState) VALUES();		
 	}
 }

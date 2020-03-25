@@ -31,7 +31,9 @@ public class DbConnect {
 				System.out.println(rs.getObject(1)+"  "+rs.getString(2)+"  "+rs.getString(3));  
 				conn.close();  
 				}catch(Exception e){ System.out.println(e);}  
-				}  
+			System.out.println("\n");
+	}  
+	
 					
 	}
 
