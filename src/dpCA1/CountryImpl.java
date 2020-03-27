@@ -13,15 +13,15 @@ public class CountryImpl implements CountryDAO {
 	BufferedReader br = new BufferedReader(in);
 	String input;
 	
-//	enum continent{
-//		Europe,
-//		Asia,
-//		Africa,
-//		South America,
-//		Antarctica,
-//		North America,
-//		Oceania
-//	}
+	enum continent{
+		Europe,
+		Asia,
+		Africa,
+		SouthAmerica,
+		Antarctica,
+		NorthAmerica,
+		Oceania
+	}
 	
 	@Override
 	public String getByName() {
