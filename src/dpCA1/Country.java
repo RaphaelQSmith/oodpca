@@ -17,6 +17,31 @@ public class Country {
 	}
 
 	
+	public class CountryBuilder{
+		private Object code;
+		private String name;
+		private String continent;
+		private float area;
+		private String headOfState;
+		
+		public CountryBuilder(Object code, String name, String continent) {
+			this.code = code;
+			this.name = name;
+			this.continent = continent;
+		}
+		
+		public CountryBuilder setArea(float area) {
+			this.area = area;
+			return this;
+		}
+		
+		public CountryBuilder setHoS(String headOfState) {
+			this.headOfState = headOfState;
+			return this;
+		}
+		
+	}
+	
 	public Object getCode() {
 		return code;
 	}
