@@ -8,16 +8,15 @@ public class Country {
 	private float area;
 	private String headOfState;
 
-	public Country(Object code, String name, String continent, float area, String headOfState) {
-		this.code = code;
-		this.name = name;
-		this.continent = continent;
-		this.area = area;
-		this.headOfState = headOfState;
+	private Country(CountryBuilder builder) {
+		this.code = builder.code;
+		this.name = builder.name;
+		this.continent = builder.continent;
+		this.area = builder.area;
+		this.headOfState = builder.headOfState;
 	}
-
 	
-	public class CountryBuilder{
+	public static class CountryBuilder{
 		private Object code;
 		private String name;
 		private String continent;
@@ -28,6 +27,8 @@ public class Country {
 			this.code = code;
 			this.name = name;
 			this.continent = continent;
+			this.headOfState = " ";
+			this.area = 0; 
 		}
 		
 		public CountryBuilder setArea(float area) {
@@ -40,45 +41,34 @@ public class Country {
 			return this;
 		}
 		
+		public Country build() {
+			return new Country(this);
+		}
+		
+	}
+	
+	@Override
+	public String toString() {
+		return "New Country:" + name +", "+ continent + ", "+ code;
 	}
 	
 	public Object getCode() {
 		return code;
 	}
 
-	public void setCode(Object code) {
-		this.code = code;
-	}
-
 	public String getName() {
 		return name;
-	}
-
-	public void setName(String name) {
-		this.name = name;
 	}
 
 	public String getContinent() {
 		return continent;
 	}
 
-	public void setContinent(String continent) {
-		this.continent = continent;
-	}
-
 	public float getArea() {
 		return area;
 	}
-
-	public void setArea(float area) {
-		this.area = area;
-	}
-
 	public String getHeadOfState() {
 		return headOfState;
 	}
 
-	public void setHeadOfState(String headOfState) {
-		this.headOfState = headOfState;
-	}
 }
