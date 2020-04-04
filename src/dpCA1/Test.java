@@ -3,6 +3,7 @@ package dpCA1;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.util.ArrayList;
 
 public class Test {
 
@@ -10,7 +11,7 @@ public class Test {
 		// TODO Auto-generated method stub
 		
 		DbConnect db = new DbConnect();
-		Country country = new Country();
+		ArrayList<Country> listCountry = new ArrayList<Country>();
 		
 		InputStreamReader in = new InputStreamReader(System.in);
 		BufferedReader br = new BufferedReader(in);

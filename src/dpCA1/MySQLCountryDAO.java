@@ -4,24 +4,13 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
-public class CountryImpl implements CountryDAO {
-	public CountryImpl() {
-		
-	}
+public class MySQLCountryDAO implements CountryDAO {
 	
+	
+	DbConnect dao = new DbConnect();
 	InputStreamReader in = new InputStreamReader(System.in);
 	BufferedReader br = new BufferedReader(in);
 	String input;
-	
-	enum continent{
-		Europe,
-		Asia,
-		Africa,
-		SouthAmerica,
-		Antarctica,
-		NorthAmerica,
-		Oceania
-	}
 	
 	@Override
 	public String getByName() {
