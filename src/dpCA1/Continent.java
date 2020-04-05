@@ -19,4 +19,12 @@ public enum Continent {
 	public String getCont() {
 		return continent;
 	}
+	public static boolean checkCont(String c) {
+		for(Continent cont : Continent.values()) {
+			if(cont.getCont().equals(c)) {
+				return true;
+			}
+		}
+		return false;
+	}	
 }

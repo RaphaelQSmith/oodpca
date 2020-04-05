@@ -42,7 +42,7 @@ public class DbConnect {
 	public boolean save(String query) {
 		
 		try {
-			stmt.executeQuery(query);
+			stmt.executeUpdate(query);
 			return true;
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block

@@ -7,6 +7,7 @@ public class Country {
 	private String continent;
 	private float area;
 	private String headOfState;
+	private static Continent c;
 
 	private Country(CountryBuilder builder) {
 		this.code = builder.code;
@@ -49,7 +50,7 @@ public class Country {
 	
 	@Override
 	public String toString() {
-		return "Country: " + name +", "+ continent + ", "+ code;
+		return "Country: [" + code +", "+ name + ", "+ continent + ", " + area +", "+ headOfState + "]";
 	}
 	
 	public Object getCode() {

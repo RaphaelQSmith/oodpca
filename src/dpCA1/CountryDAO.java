@@ -11,7 +11,7 @@ public interface CountryDAO {
 	Country getByCode();
 	
 //  return all country
-	void getAll();
+	ArrayList<Country> getAll();
 
 //	add country to the table
 	void addCountry();

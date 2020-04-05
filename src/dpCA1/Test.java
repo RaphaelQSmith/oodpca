@@ -29,12 +29,14 @@ public class Test {
 			input = br.readLine();
 	
 			if(input.equals("1")) {
-				dao.getAll();
+				System.out.println(dao.getAll());
 			}
 			else if(input.equals("2")) {
 				Country c = dao.getByCode();
 				if(c != null) {
 					System.out.println(c);
+					//cleans object to next query
+					c = null;
 					}else {
 						System.out.println("No such country founded...");
 					}
@@ -43,13 +45,15 @@ public class Test {
 				ArrayList<Country> list = dao.getByName();
 				if(list != null) {
 				System.out.println(list);
+				//cleans list to next query
+				list = null;
 				}else {
 					System.out.println("No such country founded...");
 				}
 			}
-//			else if(input.equals("4")) {
-//				db.connectDB(country.addCountry());
-//			}
+			else if(input.equals("4")) {
+				dao.addCountry();
+			}
 			else if(input.equals("5")) {
 				close = true;
 				System.out.println("Good Bye!");
