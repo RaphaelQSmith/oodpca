@@ -10,13 +10,13 @@ public class Test {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		
-		DbConnect db = new DbConnect();
-		ArrayList<Country> listCountry = new ArrayList<Country>();
+		MySQLCountryDAO dao = new MySQLCountryDAO();
 		
 		InputStreamReader in = new InputStreamReader(System.in);
 		BufferedReader br = new BufferedReader(in);
 		String input;
 		boolean close = false;
+		
 		try {
 			do {
 			System.out.println("Please select one option: \n"
@@ -29,15 +29,28 @@ public class Test {
 			input = br.readLine();
 	
 			if(input.equals("1")) {
-				db.connectDB(country.getAll());
-				
-			}else if(input.equals("2")) {
-				db.connectDB(country.getByCode());
-			}else if(input.equals("3")) {
-				db.connectDB(country.getByName());
-			}else if(input.equals("4")) {
-				db.connectDB(country.addCountry());
-			}else if(input.equals("5")) {
+				dao.getAll();
+			}
+			else if(input.equals("2")) {
+				Country c = dao.getByCode();
+				if(c != null) {
+					System.out.println(c);
+					}else {
+						System.out.println("No such country founded...");
+					}
+			}
+			else if(input.equals("3")) {
+				ArrayList<Country> list = dao.getByName();
+				if(list != null) {
+				System.out.println(list);
+				}else {
+					System.out.println("No such country founded...");
+				}
+			}
+//			else if(input.equals("4")) {
+//				db.connectDB(country.addCountry());
+//			}
+			else if(input.equals("5")) {
 				close = true;
 				System.out.println("Good Bye!");
 			}
