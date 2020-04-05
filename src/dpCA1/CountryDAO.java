@@ -4,16 +4,16 @@ import java.util.ArrayList;
 
 public interface CountryDAO {
 
-//	return country by name
+//	Return list of countries by name
 	ArrayList<Country> getByName();
 	
-//  return country by code
+//  Return country by code
 	Country getByCode();
 	
-//  return all country
+//  Return every country on queried table
 	ArrayList<Country> getAll();
 
-//	add country to the table
+//	Add country to the table
 	void addCountry();
 
 }

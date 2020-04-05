@@ -2,6 +2,7 @@ package dpCA1;
 
 public enum Continent {
 	
+	//	List of continents allowed on the new registers
 		EUROPE("Europe"),
 		ASIA("Asia"),
 		AFRICA("Africa"),
@@ -15,10 +16,10 @@ public enum Continent {
 	Continent(String continent) {
 		this.continent = continent;
 	}
-	
 	public String getCont() {
 		return continent;
 	}
+	// check if the continent typed by user is the list
 	public static boolean checkCont(String c) {
 		for(Continent cont : Continent.values()) {
 			if(cont.getCont().equals(c)) {

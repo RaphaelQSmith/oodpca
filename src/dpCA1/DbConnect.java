@@ -7,10 +7,10 @@ import java.sql.Statement;
 
 public class DbConnect {
 	
-	String dbServer = "jdbc:mysql://52.50.23.197:3306/world";
-	String user = "cctstudent";
-	String password = "Pass1234!";
-
+	// connection info to be used at compiling time
+	private String dbServer = "jdbc:mysql://52.50.23.197:3306/world";
+	private String user = "cctstudent";
+	private String password = "Pass1234!";
 	private Connection conn; 
 	private Statement stmt;
 	private ResultSet rs = null;
@@ -18,17 +18,18 @@ public class DbConnect {
 	public DbConnect() {
 		
 		try{
-			// Load the database driver
+			// run the jdbc driver installed on the reference libraries
 			Class.forName("com.mysql.jdbc.Driver").newInstance() ;
 						
-			// Get a connection to the database
+			// Connects to database using above info
 			conn = DriverManager.getConnection(dbServer, user, password);
-			
+			// create a statement variable
 			stmt = conn.createStatement(); 
 		
 			}catch(Exception e){ System.out.println(e);}  
 	}
 	
+	//	execute a query to the DB and returns a set of data
 	public ResultSet select(String query) {
 		try {
 			rs = stmt.executeQuery(query);
@@ -38,7 +39,7 @@ public class DbConnect {
 		} 
 		return rs;
 	}
-	
+	//	save a new country to the DB
 	public boolean save(String query) {
 		
 		try {
@@ -51,6 +52,7 @@ public class DbConnect {
 		}
 	}
 	
+	//	close a running connecting
 	public void closing() {
 		try {
 			rs.close();
